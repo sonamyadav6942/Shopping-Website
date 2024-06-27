@@ -12,6 +12,7 @@ root.render(
     <App />
     <Header />
     <Section1 />
-    <Slider />
+   
   </React.StrictMode>
 );
+// <Slider />

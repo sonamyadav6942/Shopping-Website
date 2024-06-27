@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import categories from "./categories.json";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { KeyboardArrowDown } from '@mui/icons-material';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { KeyboardArrowDown } from "@mui/icons-material";
 import "./Section.css";
+import ExpandableList from "./Expandable";
 
 const Section = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [fashion, setFashion] = useState("Fashion");
 
   const handleMouseEnter = () => {
-    console.log("mouse", categories)
+    console.log("mouse", categories);
+    categories.categories.map((categories) => {
+      console.log(categories);
+    });
+
     setIsPanelOpen(true);
   };
 
   const handleMouseLeave = () => {
-    console.log("on_mouse")
+    console.log("on_mouse");
     setIsPanelOpen(false);
   };
-
 
   return (
     <section className="section">
@@ -25,8 +30,6 @@ const Section = () => {
           <img
             src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/178cf5a874cd697a.png?q=100"
             alt="Top Offers"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
           />
           Top Offers
         </div>
@@ -37,12 +40,25 @@ const Section = () => {
           />
           Mobiles
         </div>
-        <div className="section-item">
+        <div
+          className="section-item"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <img
             src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/a11d5d13e54bf964.png?q=100"
             alt="Fashion"
           />
           Fashion
+          <div>
+            {isPanelOpen && (
+              <div className="panel-content">
+                {/* Content of the expandable panel */}
+                <ExpandableList categories={categories} key={fashion} />
+                <p>This is the content of the panel.</p>
+              </div>
+            )}
+          </div>
         </div>
         <div className="section-item">
           <img
@@ -87,14 +103,10 @@ const Section = () => {
           Flights
         </div>
       </div>
-      {isPanelOpen && (
-        <div className="panel-content">
-          {/* Content of the expandable panel */}
-          <p>This is the content of the panel.</p>
-        </div>
-      )}
     </section>
   );
 };
 
 export default Section;
+
+//
