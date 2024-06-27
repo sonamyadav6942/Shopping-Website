@@ -1,0 +1,61 @@
+{
+  "categories": [
+    {
+      "name": "Fashion",
+      "subcategories": [
+        {
+          "name": "Men",
+          "subcategories": [
+            { "name": "Ethnic Wear", "subcategories": [] },
+            { "name": "Western Wear", "subcategories": [] }
+          ]
+        },
+        {
+          "name": "Women",
+          "subcategories": [
+            { "name": "Ethnic Wear", "subcategories": [] },
+            { "name": "Western Wear", "subcategories": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electronics",
+      "subcategories": [
+        {
+          "name": "Smartphones",
+          "subcategories": [
+            { "name": "Android", "subcategories": [] },
+            { "name": "iOS", "subcategories": [] }
+          ]
+        },
+        {
+          "name": "Laptops",
+          "subcategories": [
+            { "name": "Windows", "subcategories": [] },
+            { "name": "Mac", "subcategories": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Home & Furniture",
+      "subcategories": [
+        {
+          "name": "Living Room",
+          "subcategories": [
+            { "name": "Sofas", "subcategories": [] },
+            { "name": "Tables", "subcategories": [] }
+          ]
+        },
+        {
+          "name": "Bedroom",
+          "subcategories": [
+            { "name": "Beds", "subcategories": [] },
+            { "name": "Wardrobes", "subcategories": [] }
+          ]
+        }
+      ]
+    }
+  ]
+}
