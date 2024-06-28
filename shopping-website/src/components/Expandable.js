@@ -2,20 +2,23 @@ import React, { useState } from "react";
 import categories from "./categories.json";
 import { List, ListItem, Collapse } from "@material-ui/core";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
-const ExpandableList = ({ categories, key}) => {
-  console.log("Hello",categories, key);
+const ExpandableList = ({ categories, value }) => {
+  const [fashionDetails, setFashionDetails] = useState([]);
+  console.log("Hello", categories, value);
+
+  console.log("fashionDetails", fashionDetails);
   const [open, setOpen] = useState({});
 
   const handleClick = (name) => {
-    console.log(name)
+    console.log(name);
     setOpen({ ...open, [name]: !open[name] });
   };
 
   return (
     <List>
-      {categories.categories.map((category) => (
+      {value.map((category) => (
         <div key={category.name}>
-          <ListItem button onClick={() => handleClick(category.name)}>
+          <ListItem button onClick={() => handleClick(category.subcategories)}>
             {category.name}
             {open[category.name] ? <ExpandLess /> : <ExpandMore />}
           </ListItem>

@@ -37,25 +37,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Home & Furniture",
-      "subcategories": [
-        {
-          "name": "Living Room",
-          "subcategories": [
-            { "name": "Sofas", "subcategories": [] },
-            { "name": "Tables", "subcategories": [] }
-          ]
-        },
-        {
-          "name": "Bedroom",
-          "subcategories": [
-            { "name": "Beds", "subcategories": [] },
-            { "name": "Wardrobes", "subcategories": [] }
-          ]
-        }
-      ]
     }
   ]
 }

@@ -1,28 +1,48 @@
 import React, { useState } from "react";
 import categories from "./categories.json";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { KeyboardArrowDown } from "@mui/icons-material";
 import "./Section.css";
 import ExpandableList from "./Expandable";
 
 const Section = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [fashion, setFashion] = useState("Fashion");
-
+  const [isElecPanelOpen, setIsElecPanelOpen] = useState(false);
+  const [fashion, setFashion] = useState("");
+  const [fashionDetails, setFashionDetails] = useState([]);
+  const [electronicDetails, setElectronicDetails] = useState([]);
   const handleMouseEnter = () => {
-    console.log("mouse", categories);
+    console.log("mouse", categories, fashion);
+    setFashion("Fashion");
     categories.categories.map((categories) => {
       console.log(categories);
+      if (categories.name == "Fashion") {
+        setFashionDetails(categories.subcategories);
+      }
     });
-
+    console.log("categories--1", fashionDetails);
     setIsPanelOpen(true);
+    setIsElecPanelOpen(false);
   };
-
+  const handleMouseEnterElectronics = () => {
+    console.log("mouse", categories, fashion);
+    setFashion("Fashion");
+    categories.categories.map((categories) => {
+      console.log(categories);
+      if (categories.name == "Electronics") {
+        setElectronicDetails(categories.subcategories);
+      }
+    });
+    console.log("categories--2", electronicDetails);
+    setIsElecPanelOpen(true);
+    setIsPanelOpen(false);
+  };
   const handleMouseLeave = () => {
     console.log("on_mouse");
     setIsPanelOpen(false);
   };
-
+  const handleMouseLeaveElec = () => {
+    console.log("on_mouse");
+    setIsElecPanelOpen(false);
+  };
   return (
     <section className="section">
       <div className="section-container">
@@ -54,8 +74,10 @@ const Section = () => {
             {isPanelOpen && (
               <div className="panel-content">
                 {/* Content of the expandable panel */}
-                <ExpandableList categories={categories} key={fashion} />
-                <p>This is the content of the panel.</p>
+                <ExpandableList
+                  categories={categories}
+                  value={fashionDetails}
+                />
               </div>
             )}
           </div>
@@ -67,12 +89,27 @@ const Section = () => {
           />
           Home
         </div>
-        <div className="section-item">
+        <div
+          className="section-item"
+          onMouseEnter={handleMouseEnterElectronics}
+          onMouseLeave={handleMouseLeaveElec}
+        >
           <img
             src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/6e3e1efa83bc56c3.png?q=100"
             alt="Electronics"
           />
           Electronics
+          <div>
+            {isElecPanelOpen && (
+              <div className="panel-content">
+                {/* Content of the expandable panel */}
+                <ExpandableList
+                  categories={categories}
+                  value={electronicDetails}
+                />
+              </div>
+            )}
+          </div>
         </div>
         <div className="section-item">
           <img

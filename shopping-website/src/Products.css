@@ -1,0 +1,81 @@
+.section-4-container {
+  height: 100%;
+  margin-top: 8px;
+  height: 362px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-4-offers {
+  width: 230px;
+  height: 100%;
+  background-image: url('https://rukminim1.flixcart.com/fk-p-flap/278/278/image/1e483f8045ec13a8.jpg?q=90');
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.section-4-offers-viewall {
+  margin-top: 132px;
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-4-offers-viewall button {
+  margin-top: 24px;
+  height: 40px;
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.section-4-list {
+  height: 100%;
+  width: calc(100% - 230px);
+  display: flex;
+  overflow-x: auto;
+}
+
+.section-4-item {
+  width: 200px;
+  height: 100%;
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-4-item img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.section-4-item-head {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.section-4-item-price {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #388e3c;
+}
+
+.section-4-item-explore {
+  opacity: 0.6;
+  margin-top: 12px;
+  font-weight: 300;
+  font-size: 12px;
+}
